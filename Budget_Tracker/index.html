@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./form.css">
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+
+            <i data-feather="align-left"></i>
+            <h2>Expenses</h2>
+            <button id="modal-btn"><i data-feather="plus"></i></button>
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <div class="form-content">
+                        <form class="form" action="#">
+                            <div class="text-field">
+                                <label>New Expenses</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="text-field">
+                                <label>Category</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="text-field">
+                                <label>Amount</label>
+                                <input type="number" required>
+
+                            </div>
+                            <div class="Add-budget"><button id="close-btn">Add Budget</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <i data-feather="menu"></i>
+        </nav>
+        <section class="budget">
+            <i data-feather="chevron-left" class="rounded-icon" id="slider-btn-left"></i>
+            <div class="month-bill" id="month-bill">
+                <!-- <h2>October</h2>
+                <h2>$52,648</h2>  -->
+            </div>
+
+            <i data-feather="chevron-right" class="rounded-icon" id="slider-btn-right"></i>
+        </section>
+    </header>
+    <section class="main-section">
+        <section class="progress">
+
+            <div class="budget-progress">
+                <h2>Month budget</h2>
+                <p>$12,000</p>
+                <p>56%</h2>
+            </div>
+            <div class="progress-bar">
+                <div class="bar"></div>
+            </div>
+        </section>
+        <section>
+            <div class="tabs">
+                <h2>Expenses</h2>
+                <h3>incomes</h3>
+                <i data-feather="chevrons-down" class="chevron-downs"></i>
+            </div>
+            <div class="expenses">
+                <div class="expense-card">
+                    <i data-feather="shopping-cart" class="rounded-icons"></i>
+                    <div class="monthly-spend">
+                        <h2>Shops</h2>
+                        <p>46% of budget</h2>
+                    </div>
+                    <div class="cost">
+                        <h2>$1308974</h2>
+                        <p>9 transaction</p>
+                    </div>
+                </div>
+                <div class="expense-card">
+                    <i data-feather="activity" class="rounded-icons"></i>
+                    <div class="monthly-spend">
+                        <h2>Health</h2>
+                        <p>13% of budget</p>
+                    </div>
+                    <div class="cost">
+                        <h2>$89498</h2>
+                        <p>4 transactions</p>
+                    </div>
+                </div>
+                <div class="expense-card">
+                    <i data-feather="headphones" class="rounded-icons"></i>
+                    <div class="monthly-spend">
+                        <h2>Entainment</h2>
+                        <p>6% of budget</p>
+                    </div>
+                    <div class="cost">
+                        <h2>$774</h2>
+                        <p>10 transactions</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+    </section>
+    <script src="./App.js"></script>
+</body>
+
+</html>
