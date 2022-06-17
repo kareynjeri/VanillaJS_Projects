@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Budget-Tracker</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./form.css">
+    <link rel="shortcut icon" href="#">
+
 </head>
 
 <body>
@@ -17,25 +18,33 @@
 
             <i data-feather="align-left"></i>
             <h2>Expenses</h2>
-            <button id="modal-btn"><i data-feather="plus"></i></button>
+            <button id="modal-btn"><i class="show-modal" data-feather="plus"></i></button>
             <div class="modal" id="modal">
                 <div class="modal-content">
                     <div class="form-content">
-                        <form class="form" action="#">
+                        <form id="form" class="form" action="#">
                             <div class="text-field">
                                 <label>New Expenses</label>
-                                <input type="text" required>
+                                <input id="new" type="text" required>
                             </div>
                             <div class="text-field">
-                                <label>Category</label>
-                                <input type="text" required>
+                                <label>Category<i class="i" data-feather="chevron-down"></i></label>
+                                <!-- <input id="category" type="text" required> -->
+                                <div class="select-container">
+                                    <select class="select-input">
+                                        <option value="shops">Shops</option>
+                                        <option value="saab">Health</option>
+                                        <option value="opel">Entainment</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="text-field">
                                 <label>Amount</label>
-                                <input type="number" required>
+                                <input id="amount" type="number" required>
 
                             </div>
-                            <div class="Add-budget"><button id="close-btn">Add Budget</button></div>
+                            <div class="Add-budget"><button id="add">Add
+                                    Expense</button></div>
                         </form>
                     </div>
                 </div>
@@ -54,9 +63,8 @@
     </header>
     <section class="main-section">
         <section class="progress">
-
             <div class="budget-progress">
-                <h2>Month budget</h2>
+                <h2>Month-budget</h2>
                 <p>$12,000</p>
                 <p>56%</h2>
             </div>
@@ -64,7 +72,7 @@
                 <div class="bar"></div>
             </div>
         </section>
-        <section>
+        <section class="Expenses">
             <div class="tabs">
                 <h2>Expenses</h2>
                 <h3>incomes</h3>
@@ -109,7 +117,11 @@
             </div>
         </section>
     </section>
-    <script src="./App.js"></script>
+
+    <script>
+        feather.replace()
+    </script>
+    <script src="App.js"></script>
 </body>
 
 </html>

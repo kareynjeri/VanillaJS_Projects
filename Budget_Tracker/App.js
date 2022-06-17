@@ -1,12 +1,12 @@
 //getting the elements 
-feather.replace()
+// feather.replace()
 
 // to display the modal container 
 const modal = document.getElementById("modal");
 //to get the button when clicked displays modal 
 const btn = document.getElementById("modal-btn");
 // to close the modal 
-const closeModal = document.getElementById("close-btn");
+const addExpense = document.getElementById("add");
 
 
 //display modal .
@@ -14,16 +14,17 @@ btn.addEventListener("click", function (){
 modal.style.display = "block";
 });
 
-//close the modal
-closeModal.addEventListener("click", function (){
-modal.style.display = "none";
+// close the modal
+// closeModal.addEventListener("click", function (){
+// modal.style.display = "none";
+// });
+
+window.addEventListener("click", function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 });
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
 console.log(modal)
 
 //Month bill 
@@ -65,20 +66,14 @@ budget: "$9813"
 {month : "October",
 budget: "$9813"
 },
-{month : "September",
-budget: "$9813"
-},
-{month : "October",
-budget: "$9813"
-},
 {month : "November",
 budget: "$9813"
 },
 {month : "December",
 budget: "$9813"
-}
+}]
 
-]
+
 //loop through 
 // for(let i = 0; i < months.length; i++){
 //     if(months[i].budget <= 12000 ){
@@ -143,3 +138,26 @@ init()
 
 sliderRight.addEventListener("click", clickNext);
 sliderLeft.addEventListener("click", clickPrevious);
+
+
+//preventing default 
+const de = document.getElementsByClassName("form");
+const defaults = function (event){
+  event.preventDefault()
+}
+
+
+const transactions = [];
+const addNewExpense = function (){
+  let expenseObj = {}
+    expenseObj.new = document.getElementById("new").value;
+    //expenseObj.category = document.getElementById("category").value;
+    expenseObj.amount = document.getElementById("amount").value;
+    transactions.push(expenseObj);
+    console.log({ transactions })
+}
+// addNewExpense(expense);eee
+addExpense.addEventListener("click", addNewExpense);
+
+de.addEventListener("click",defaults)
+

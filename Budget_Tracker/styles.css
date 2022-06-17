@@ -1,8 +1,135 @@
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+body {
+
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(120deg, #2980b9, #9e5bba);
+}
+
+header {
+    height: 300px;
+}
+
+.modal {
+    display: flex;
+    cursor: pointer;
+}
+
+.show-modal {
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 50px;
+    color: white;
+}
+
+.budget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    cursor: pointer;
+    font-size: 28px;
+    /* height: 70px; */
+}
+
+.progress {
+    height: 100px;
+    padding: 0px 20px 0px 20px;
+}
+
+.progress-bar {
+    height: 5px;
+    width: 100%;
+    border: solid 1px green;
+    border-radius: 10px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    height: 12px;
+    width: 70%;
+    border: solid red;
+    border-radius: 10px;
+    background-color: red;
+
+}
+
+.budget-progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 13px;
+
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 0px 20px 0px 20px
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+.expense-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.expenses {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+.Expenses {
+    height: 400px;
+}
+
+/* form */
+
+.modal {
+    position: relative;
+
+    display: none;
+    z-index: 1;
+    top: 0;
+    right: 300px;
+
+}
+
+.modal-content {
+    position: absolute;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
 }
 
 .form-content {
@@ -11,18 +138,16 @@ input[type=number]::-webkit-outer-spin-button {
     border: solid;
     padding: 20px;
     display: flex;
-    width: 80%;
+    width: 100%;
     background: white;
+    position: relative;
     /* flex-direction: column; */
-
-
 }
 
+
 .text-field {
-    width: 90%;
-
     border-bottom: solid gray 2px;
-
+    color: rgb(171, 165, 165);
     margin-bottom: 20px;
 }
 
@@ -31,16 +156,8 @@ input[type=number]::-webkit-outer-spin-button {
     outline: none;
     cursor: pointer;
     padding: 0 20px;
-    height: 40px;
+    height: 45px;
     font-size: 19px;
-}
-
-
-.text-field label:hover {
-    color: #2691d9;
-    font-weight: 400;
-    transition: .59s;
-
 }
 
 button {
@@ -64,4 +181,71 @@ button {
     margin-top: 40px;
 
 
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* end form  */
+
+.select-container {
+
+
+    height: 60px;
+    width: 100%;
+    position: relative;
+
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.i {
+    color: #00468b;
+}
+
+.select-input {
+    height: 60px;
+    padding: 5px 5px 5px 15px;
+    border: 0;
+    font-size: 20px;
+    /* width: 100px; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    color: #00468b;
+}
+
+select option {
+    background-color: #bd1111;
+    font-size: 38px;
+}
+
+.select:after {
+    content: "\f107";
+    background-color: #bd1111;
+    color: #666;
+    padding: 12px 8px;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    height: 100%;
+    /* pointer-events: none; */
+
+    font-size: 35px;
 }
