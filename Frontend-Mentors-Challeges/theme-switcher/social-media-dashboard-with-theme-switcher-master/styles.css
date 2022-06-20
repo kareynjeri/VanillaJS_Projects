@@ -1,0 +1,179 @@
+:root {
+    --dark: #3b5072;
+    --darker: #1F2937;
+    --darkest: #111827;
+
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 50px 100px 40px 100px;
+    background-color: hsl(230, 17%, 14%);
+}
+
+.nav {
+    display: flex;
+
+    /* color: white; */
+    justify-content: space-between;
+
+    color: white;
+}
+
+.main {
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+
+.card {
+    height: 200px;
+    width: 250px;
+    border: solid 0px hsl(228, 28%, 20%);
+    box-shadow: 0px 2px 2px hsl(228, 28%, 20%);
+    background-color: hsl(228, 28%, 20%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border-top: solid 4px hsl(208, 92%, 53%);
+    margin-right: 26px;
+
+
+}
+
+.third-card {
+    border: solid 0px hsl(228, 28%, 20%);
+    border-top: solid 4px hsl(326, 49%, 75%);
+}
+
+.last-card {
+    border: solid 0px hsl(228, 28%, 20%);
+    border-top: solid 4px hsl(348, 97%, 39%);
+}
+
+.card-text2 {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+}
+
+.card-text2 h1 {
+    font-size: 60px;
+    font-weight: 500;
+    color: hsl(0, 0%, 100%);
+}
+
+.card-text2 p {
+    color: hsl(228, 34%, 66%);
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 5px;
+    line-height: 10px;
+}
+
+.card-texts {
+    display: flex;
+    color: hsl(228, 34%, 66%);
+    margin-right: -10px;
+    align-items: center;
+    padding-bottom: 14px;
+}
+
+.card-texts p {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    color: hsl(163, 72%, 41%);
+    padding-top: 20px;
+
+
+}
+
+
+
+.icon p {
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.row-cards {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+
+}
+
+.horizontal-cards-wrapper {
+
+    display: flex;
+}
+
+.horizontal-card {
+
+    height: 100px;
+    width: 250px;
+    border: solid 0px hsl(228, 28%, 20%);
+    box-shadow: 0px 2px 2px hsl(228, 28%, 20%);
+    background-color: hsl(228, 28%, 20%);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 0px 30px;
+
+    border-radius: 4px;
+    margin-right: 26px;
+
+}
+
+.text-svg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(228, 34%, 66%);
+    font-size: 14px;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+
+.icon-text {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+
+}
+
+.icon-text p:first-child {
+    color: white;
+    font-size: 32px;
+    font-weight: 900;
+
+}
+
+.icon-text2 {
+    display: flex;
+    align-items: center;
+}
+
+.icon-text2 p {
+    margin-left: 5px;
+    color: hsl(163, 72%, 41%);
+    font-size: 12px;
+    font-weight: 900;
+}
