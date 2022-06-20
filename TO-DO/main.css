@@ -1,5 +1,5 @@
 :root {
-    --dark: #374151;
+    --dark: #3b5072;
     --darker: #1F2937;
     --darkest: #111827;
     --grey: #6B7280;
@@ -130,6 +130,8 @@ main {
     margin: 0 -0.5rem;
 }
 
+
+
 .task .actions button {
     cursor: pointer;
     margin: 0 0.5rem;
@@ -138,6 +140,8 @@ main {
     text-transform: uppercase;
     transition: 0.4s;
 }
+
+
 
 .task .actions button:hover {
     opacity: 0.8;
@@ -153,6 +157,28 @@ main {
     -webkit-text-fill-color: transparent;
 }
 
+
+
 .task .actions .delete {
     color: crimson;
+}
+
+
+.complt h1 {
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.done {
+    text-decoration: none;
+    color: wheat;
+}
+
+.complete {
+    text-decoration: line-through;
 }

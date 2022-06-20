@@ -30,29 +30,33 @@ window.addEventListener('load', () => {
 
         const task_edit_el = document.createElement("button");
         task_edit_el.classList.add("edit")
-        task_edit_el.innerHTML = "EDIT";
+        task_edit_el.innerHTML = "edit";
+
+
+        const task_done_el = document.createElement("button");
+        task_done_el.classList.add("done");
+        task_done_el.innerHTML = "done";
 
         const task_delete_el = document.createElement("button");
         task_delete_el.classList.add("delete")
         task_delete_el.innerHTML = "DELETE"
 
+
         task_actions_el.appendChild(task_edit_el);
+        task_actions_el.appendChild(task_done_el);
 		task_actions_el.appendChild(task_delete_el);
-
-
-
         task_el.appendChild(task_actions_el);
-         
+      
         list_el.appendChild(task_el);
 
 
         task_edit_el.addEventListener("click", () => {
-            if (task_edit_el.innerText.toLowerCase() == "edit") {
+            if (task_edit_el.innerHTML == "edit") {
                 task_edit_el.innerText = "save"
                 task_input_el.removeAttribute("readonly");
                 task_input_el.focus()
                
-            }else {
+            }else  {
                 task_edit_el.innerText = "edit"
                 task_input_el.setAttribute("readonly","readonly")
                 
@@ -64,6 +68,9 @@ window.addEventListener('load', () => {
             list_el.removeChild(task_el);
         });
       
-
+        task_done_el.addEventListener('click', () => {
+            task_input_el.classList.add("complete");
+            
+        })
     });
 });
