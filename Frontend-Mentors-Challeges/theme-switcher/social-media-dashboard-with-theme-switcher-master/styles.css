@@ -1,11 +1,3 @@
-:root {
-    --dark: #3b5072;
-    --darker: #1F2937;
-    --darkest: #111827;
-
-
-}
-
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -13,35 +5,165 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* DARK COLOR MODE  */
+:root {
+    --background-color: hsl(230, 17%, 14%);
+    --card-background-color: hsl(228, 28%, 20%);
+    --desaturated-blue-text: hsl(228, 34%, 66%);
+    --white-text: hsl(0, 0%, 100%);
+    --lime-icon-text-color: hsl(163, 72%, 41%);
+    --red-icon-text-color: hsl(356, 69%, 56%);
+    --label-bkg-color: linear-gradient(315deg, #bbf98f 0%, #6692c4 74%);
+    --third-card-bkg: hsl(229, 28%, 27%);
+    --other-text: white;
+    --top-bkg: hsl(232, 19%, 15%);
+}
+
+/*
+ - Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%) 
+- Lime Green: hsl(163, 72%, 41%)
+- Bright Red: hsl(356, 69%, 56%)
+*/
+
+/* #### Light Theme
+
+- White (BG): hsl(0, 0%, 100%)
+- Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
+- Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
+- Dark Grayish Blue (Text): hsl(228, 12%, 44%)
+- Very Dark Blue (Text): hsl(230, 17%, 14%) */
+
+.light-theme {
+    --background-color: hsl(0, 0%, 100%);
+    --card-background-color: hsl(227, 47%, 96%);
+    --white-text: hsl(230, 17%, 14%);
+    --third-card-bkg: hsl(226, 42%, 90%);
+    --other-text: hsl(228, 12%, 44%);
+    --top-bkg: hsl(225, 100%, 98%);
+    --red-icon-text-color: hsl(356, 69%, 56%);
+}
+
 body {
     height: 100%;
     width: 100%;
-    padding: 50px 100px 40px 100px;
-    background-color: hsl(230, 17%, 14%);
+    background-color: var(--background-color);
+    transition: background 0.2s linear;
+}
+
+/* DARK THEME CLASSES  */
+body.light_theme {
+    background-color: var(--white-text);
+    /* color: white; */
+
+}
+
+
+
+/* CREATING THE CHECKBOX */
+.mode-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.mode-wrapper h3 {
+    font-size: 13px;
+    color: var(--other-text);
+}
+
+.theme-icon {
+    width: 36px;
+    height: 17px;
+
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    position: relative;
+
+    background-image: var(--label-bkg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    height: 23px;
+    width: 47px;
+    margin-left: 12px;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+
+}
+
+.ball {
+    background-color: var(--white-text);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 18px;
+    width: 18px;
+
+    transition: transform 0.1s linear;
+
+}
+
+.checkbox:checked+.label .ball {
+    background-color: var(--background-color);
+}
+
+
+
+/* END OF CHECKBOX */
+
+
+.main {
+    height: 200px;
+    background-color: var(--top-bkg);
+    padding-left: 200px;
+    padding-right: 100px;
 }
 
 .nav {
     display: flex;
+    align-items: center;
 
-    /* color: white; */
-    justify-content: space-between;
-
-    color: white;
-}
-
-.main {
     padding-top: 30px;
+    /* color: white; */
     padding-bottom: 40px;
+    justify-content: space-between;
+    color: var(--white-text);
 }
 
+
+
+.nav p {
+    color: var(--desaturated-blue-text);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+/* .nav p {
+    color: hsl(228, 34%, 66%);
+    font-size: 14px;
+    font-weight: 400;
+} */
 
 
 .card {
     height: 200px;
     width: 250px;
-    border: solid 0px hsl(228, 28%, 20%);
-    box-shadow: 0px 2px 2px hsl(228, 28%, 20%);
-    background-color: hsl(228, 28%, 20%);
+    border: solid 0px;
+
+    background-color: var(--card-background-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,14 +176,20 @@ body {
 }
 
 .third-card {
-    border: solid 0px hsl(228, 28%, 20%);
+    background-color: var(--third-card-bkg);
+    border: solid 0px hsl(228, 22%, 74%);
     border-top: solid 4px hsl(326, 49%, 75%);
 }
 
 .last-card {
-    border: solid 0px hsl(228, 28%, 20%);
+    border: solid 0px var(--background-color);
     border-top: solid 4px hsl(348, 97%, 39%);
 }
+
+.last-card .icon {
+    color: var(--red-icon-text-color);
+}
+
 
 .card-text2 {
     display: flex;
@@ -73,11 +201,11 @@ body {
 .card-text2 h1 {
     font-size: 60px;
     font-weight: 500;
-    color: hsl(0, 0%, 100%);
+    color: var(--white-text);
 }
 
 .card-text2 p {
-    color: hsl(228, 34%, 66%);
+    color: var(--desaturated-blue-text);
     font-size: 12px;
     font-weight: 100;
     letter-spacing: 5px;
@@ -86,7 +214,7 @@ body {
 
 .card-texts {
     display: flex;
-    color: hsl(228, 34%, 66%);
+    color: var(--desaturated-blue-text);
     margin-right: -10px;
     align-items: center;
     padding-bottom: 14px;
@@ -101,7 +229,7 @@ body {
 .icon {
     display: flex;
     align-items: center;
-    color: hsl(163, 72%, 41%);
+    color: var(--lime-icon-text-color);
     padding-top: 20px;
 
 
@@ -121,6 +249,13 @@ body {
 
 }
 
+.overview h2 {
+    color: var(--other-text);
+    font-size: 20px;
+    padding-top: 28px;
+    padding-bottom: 22px;
+}
+
 .horizontal-cards-wrapper {
 
     display: flex;
@@ -131,14 +266,15 @@ body {
     height: 100px;
     width: 250px;
     border: solid 0px hsl(228, 28%, 20%);
-    box-shadow: 0px 2px 2px hsl(228, 28%, 20%);
-    background-color: hsl(228, 28%, 20%);
+
+    background-color: var(--card-background-color);
     display: flex;
     flex-direction: column;
     padding: 20px 30px 0px 30px;
 
     border-radius: 4px;
     margin-right: 26px;
+    margin-bottom: 26px;
 
 }
 
@@ -146,7 +282,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: hsl(228, 34%, 66%);
+    color: var(--desaturated-blue-text);
     font-size: 14px;
     font-weight: 900;
     padding-bottom: 10px;
@@ -160,7 +296,7 @@ body {
 }
 
 .icon-text p:first-child {
-    color: white;
+    color: var(--white-text);
     font-size: 32px;
     font-weight: 900;
 
@@ -173,7 +309,14 @@ body {
 
 .icon-text2 p {
     margin-left: 5px;
-    color: hsl(163, 72%, 41%);
+    color: var(--lime-icon-text-color);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.horizontal-last-card .icon-text2 p {
+    margin-left: 5px;
+    color: var(--red-icon-text-color);
     font-size: 12px;
     font-weight: 900;
 }

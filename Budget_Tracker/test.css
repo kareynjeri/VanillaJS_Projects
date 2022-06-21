@@ -1,0 +1,181 @@
+* {
+    box-style: border-box;
+}
+
+/* //light color mode */
+:root {
+    --clr-background: #eceff1;
+    --clr-base: #ffffff;
+    --clr-primary: #aa00ff;
+    --clr-gray: #263238;
+    --font-size: 16px;
+    --border-radius: 0.2em;
+}
+
+/* // dark mode colors class */
+.dark-mode {
+    --clr-background: #263238;
+    --clr-base: black;
+    --clr-primary: red;
+    --clr-gray: #e0f7fa;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--clr-background);
+    color: var(--clr-gray);
+    font-size: var(--font-size);
+}
+
+#wrapper-main {
+    margin: 2em;
+}
+
+.navbar ul {
+    width: 100vw;
+    background-color: var(--clr-primary);
+    margin: 0;
+
+
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    height: 3em;
+    padding: 0;
+}
+
+ul li {
+    padding-right: 2em;
+    font-weight: bold;
+    color: var(--clr-base);
+}
+
+li:first-child {
+    margin-right: auto;
+    margin-left: 2em;
+}
+
+svg {
+    fill: var(--clr-base);
+}
+
+
+.header h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0;
+
+
+    margin-bottom: 1em;
+
+
+}
+
+.material-icons {
+    padding: 0 0.2em;
+    font-size: 1.5em;
+}
+
+#search {
+    background-color: var(--clr-base);
+    border-radius: var(--border-radius);
+    width: 15em;
+    height: 2.5em;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    color: var(--clr-gray);
+}
+
+#wrapper-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5em;
+}
+
+.container {
+    background-color: var(--clr-base);
+    border-radius: var(--border-radius);
+    padding: 1em;
+    border-top: 4px solid var(--clr-primary);
+
+
+}
+
+h2 {
+    margin-bottom: 0.2em;
+    margin-top: 0.5em;
+}
+
+p.date {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: -1em;
+    margin-top: 0em;
+}
+
+
+
+
+/* //container that holds the switch */
+.wrapper-color-switch {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+/* //label for switch that is interactive */
+.color-switch {
+    width: 4em;
+    height: 2em;
+    border-radius: 10em;
+    background: var(--clr-base);
+    border: 2px solid var(--clr-primary);
+    position: absolute;
+    cursor: pointer;
+}
+
+/* //circle toggle that animates backward and forward */
+.color-switch-toggle {
+    width: 1.6em;
+    height: 1.6em;
+    background: var(--clr-primary);
+    position: absolute;
+    border-radius: 10em;
+    top: 0.2em;
+    left: 0.2em;
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+/* //text label that indicates switch state
+  //light by default */
+.color-switch::before {
+    content: "Light Mode On";
+    position: absolute;
+    display: inline-block;
+    width: 12em;
+    left: -8em;
+    top: 0.4em;
+}
+
+/* //animate circle toggle if switch is on */
+#input-color-switch:checked~label .color-switch-toggle {
+    transform: translatex(2em);
+}
+
+/* //change text of before if switch is on */
+#input-color-switch:checked~.color-switch::before {
+    content: "Dark Mode On";
+}
+
+/* //hide input */
+#input-color-switch {
+    display: none;
+}
